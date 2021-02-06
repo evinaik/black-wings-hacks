@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@17/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+  ></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  <link rel="stylesheet" href="final.css" />
+  <body>
+    <h1>Hello World!</h1>
+
+    <p>
+      Let's write a <strong>simple</strong> button using basic HTML and
+      JavaScript.
+    </p>
+
+    <!-- UI code until frameworks and libraries came around. -->
+
+    <!-- Here is my first post. This one works just fine. -->
+    <div class="container">
+      <h3 class="postTitle">My First Post</h3>
+      <div class="subcontainer">
+        <button class="likeButton" id="likeButton">Like</button>
+
+        <span class="likes" id="likes">0</span>
+
+        <button class="dislikeButton" id="dislikeButton">Dislike</button>
+      </div>
+    </div>
+
+    <!-- What happens when I add my second post? -->
+    <div class="container">
+      <h3 class="postTitle">My Second Post</h3>
+      <div class="subcontainer">
+        <button class="likeButton" id="likeButton">Like</button>
+
+        <span class="likes" id="likes">0</span>
+
+        <button class="dislikeButton" id="dislikeButton">Dislike</button>
+      </div>
+    </div>
+
+    <script>
+      const likesElement = document.getElementById("likes");
+      let likes = 0;
+
+      function like() {
+        likes++;
+        likesElement.innerText = likes;
+      }
+
+      function dislike() {
+        if (likes === 0) {
+          return;
+        }
+
+        likes--;
+        likesElement.innerText = likes;
+      }
+
+      document.getElementById("likeButton").addEventListener("click", like);
+      document
+        .getElementById("dislikeButton")
+        .addEventListener("click", dislike);
+    </script>
+
+    <!-- End old timey UI code. -->
+
+    <!-- React code is imported and inserted below. -->
+    <div id="root"></div>
+
+    <script src="./final.js" type="text/babel"></script>
+    <!-- End React. -->
+  </body>
+</html>

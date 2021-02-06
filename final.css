@@ -1,0 +1,28 @@
+h1 {
+  color: blue;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10vw;
+}
+
+.likeButton {
+  background-color: white;
+}
+
+.dislikeButton {
+  background-color: yellow;
+}
+
+.likeButton:hover,
+.dislikeButton:hover:not(:disabled) {
+  background-color: pink;
+}
+
+.likes {
+  margin: 0 2vw;
+}
